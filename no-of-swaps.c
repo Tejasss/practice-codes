@@ -1,7 +1,7 @@
 /* Find minimum number of swaps to get an array sorted in ascending order */
 
 #include<stdio.h>
-/* For qsort() function */
+/* For qsort(), bsearch() functions */
 #include<stdlib.h>
 
 int compare(const void* x, const void* y)
@@ -29,5 +29,13 @@ int main()
 	for(int i = 0; i < sizeof(arr)/sizeof(*arr); i++)
 		printf("%d ", arr[i]);
 	printf("\n");
+	int item = 6;
+	int *pItem = NULL;
+	pItem = (int*) bsearch(&item, arr, sizeof(arr)/sizeof(*arr), sizeof(*arr), compare);
+	if(pItem)
+		printf("Found\n");
+	else
+		printf("Not found\n");
+	
 	return 0;
 }
