@@ -33,7 +33,7 @@ int main()
 	int *pItem = NULL;
 	pItem = (int*) bsearch(&item, arr, sizeof(arr)/sizeof(*arr), sizeof(*arr), compare);
 	if(pItem)
-		printf("Found\n");
+		printf("Found at index %ld\n", pItem - arr);
 	else
 		printf("Not found\n");
 	
